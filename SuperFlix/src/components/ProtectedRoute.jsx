@@ -1,0 +1,11 @@
+import React, { Component } from 'react'
+import { Navigate } from 'react-router-dom'
+
+const ProtectedRoute = ({element: Component, ...rest}) => {
+
+    const token = localStorage.getItem('token');
+
+  return token ? <Component {...rest} /> : <Navigate to='/login' replace />
+}
+
+export default ProtectedRoute;
