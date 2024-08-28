@@ -15,7 +15,10 @@ const LoginContainer = styled.div`
   background-image: url('${back}');
   background-size: cover;
   background-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
 `
+
 
 const LoginForm = styled.form`
   background-color: rgba(0, 0, 0, 0.75);
@@ -27,6 +30,8 @@ const LoginForm = styled.form`
 const Title = styled.h2`
   color: white;
   margin-bottom: 20px;
+  font-size: 30px;
+
 `
 
 const Input = styled.input`
@@ -47,6 +52,7 @@ const Button = styled.button`
   cursor: pointer;
   font-size: 16px;
   margin: 20px 0;
+  transition: 0.15s;
 
   &:hover {
     background-color: darkred;
@@ -72,6 +78,10 @@ const RegisterLink = styled.a `
   color: white;
   text-decoration: underline;
   cursor: pointer:
+  
+  &:hover {
+    color: green;
+  }
 `
 
 const Login = () => {

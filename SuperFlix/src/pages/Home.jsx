@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 import back from '../assets/netflix_background.jpg'
+import Logo from '../assets/fontbolt.png'
+
+
 
 const HomeContainer = styled.div`
   height: 100vh;
@@ -13,6 +16,8 @@ const HomeContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
 `
 
 const Header = styled.div`
@@ -20,14 +25,8 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background-color: #1F1F1F;
+  background-color: black;
   align-items:center;
-`
-
-const Logo = styled.div`
-  color: red;
-  font-size: 24px;
-  font-weight: bold;
 `
 
 const NavLinks = styled.div`
@@ -38,6 +37,7 @@ const NavLinks = styled.div`
     color: white;
     text-decoration: none;
     border-radius 5px;
+    transition: 0.15s;
 
     &:hover {
       background-color: darkred;
@@ -45,6 +45,9 @@ const NavLinks = styled.div`
 
   }
 
+`
+const LogoFormat = styled.img`
+  width: 12em;
 `
 
 const MainContent = styled.div`
@@ -75,6 +78,7 @@ const MainContent = styled.div`
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.15s;
 
     &:hover {
       background-color: darkred;
@@ -88,7 +92,7 @@ const Home = () => {
   return (
     <HomeContainer>
       <Header>
-        <Logo>SUPERFLIX</Logo>
+        <LogoFormat src={Logo}/>
         <NavLinks>
           <Link to='/login'>Entrar</Link>
           <Link to='/register'>Criar conta</Link>

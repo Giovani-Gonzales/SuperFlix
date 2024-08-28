@@ -5,6 +5,16 @@ import styled from 'styled-components'
 import back from '../assets/netflix_background.jpg'
 import { Link } from 'react-router-dom'
 
+
+const Header = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #1F1F1F;
+  align-items:center;
+`
+
 const RegisterContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -13,6 +23,8 @@ const RegisterContainer = styled.div`
   background-image: url('${back}');
   background-size: cover;
   background-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
 `
 
 const RegisterForm = styled.form`
@@ -25,6 +37,7 @@ const RegisterForm = styled.form`
 const Title = styled.h2`
   color: white;
   margin-bottom: 20px;
+  font-size: 30px;
 `
 
 const Input = styled.input`
@@ -45,6 +58,7 @@ const Button = styled.button`
   cursor: pointer;
   font-size: 16px;
   margin: 20px 0;
+  transition: 0.15s;
 
   &:hover {
     background-color: darkred;

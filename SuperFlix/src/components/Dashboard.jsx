@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Profile1 from '../assets/profile1.jpg'
 import Profile2 from '../assets/profile2.jpg'
 
+import Logo from '../assets/fontbolt.png'
+
 const DashboardContainer = styled.div`
   height: 100vh;
   background-color: #141414;
@@ -22,12 +24,11 @@ const Header = styled.div `
   padding: 20px;
   position: absolute;
   top: 0; 
+  background: black;
 `
 
-const Logo = styled.div`
-  color: red;
-  font-size: 24px;
-  font-weight: bold;
+const LogoFormat = styled.img`
+  width: 12em;
 `
 
 const MainContent = styled.div`
@@ -38,6 +39,12 @@ const MainContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  h1 {
+    position: absolute;
+    top: 120px;
+    margin: 0;
+  }
 `
 
 const ProfilesContainer = styled.div`
@@ -49,16 +56,34 @@ const ProfilesContainer = styled.div`
     margin: 0 10px;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease; 
 
     img {
-      width: 100px;
-      height: 100px;
+      width: 145px;
+      height: 145px;
       border-radius: 10px;
       margin-bottom: 10px;
+      transition: transform 0.5s ease;
     }
 
     span {
       display: block;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover {
+      transform: scale(1.05); 
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+
+    &:hover span {
+      transform: scale(1.05);
     }
   }
 `;
@@ -71,6 +96,8 @@ const ManageProfilesButton = styled.button`
   border: 1px solid gray;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 40px;
+  
 
   &:hover {
     border-color: white;
@@ -79,7 +106,7 @@ const ManageProfilesButton = styled.button`
 `
 
 const LogoutButton = styled.button`
-  mrgin-top: 20px;
+  margin-top: 20px;
   padding: 10px 20px;
   font-size: 18px;
   background-color: red;
@@ -87,6 +114,7 @@ const LogoutButton = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.15s;
 
   &:hover {
     background-color: darkred;
@@ -108,7 +136,7 @@ const Dashboard = () => {
   return (
     <DashboardContainer>
       <Header>
-        <Logo>Dashboard</Logo>
+        <LogoFormat src={Logo}/>
       </Header>
       <MainContent>
         <h1>Quem está assistindo?</h1>
